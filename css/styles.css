@@ -50,6 +50,13 @@ article, aside, canvas, details, figcaption, figure, footer, header, hgroup, men
   text-transform: uppercase;
 }
 
+@media (max-width:1200px){
+  html,body{
+    width:100vw;
+    box-sizing: border-box;
+  }
+}
+
 /* ====================== Navigation ====================== */
 nav {
   max-width: 1320px;
@@ -59,13 +66,15 @@ nav {
 }
 nav h1 {
   margin: auto;
+  padding-top: 10px;
 }
 nav h1 a {
   color: #fff;
-  font-size: 5vw;
+  font-size: 48px;
   font-weight: 500;
   letter-spacing: 10px;
   text-transform: uppercase;
+  box-sizing: border-box;
 }
 #breadcrumb {
     padding: 10px 40px 16px;
@@ -100,6 +109,13 @@ nav h1 a {
     color: #01447e;
     text-decoration: underline;
 }
+
+@media (max-width:780px){
+  nav h1 a {
+    font-size: 4.6vw;
+    padding-top: 7vw;
+  }
+}
 /* ====================== Map ====================== */
 #map {
   height: 400px;
@@ -124,7 +140,7 @@ nav h1 a {
   line-height: 1;
   margin: 0 10px;
   float:left;
-  width:100px;
+  width: 100px;
   padding: 0 10px;
 }
 .filter-options select {
@@ -135,16 +151,14 @@ nav h1 a {
   font-size: 11pt;
   height: 35px;
   letter-spacing: 0;
-  margin: 10px;
+  margin: 10px 3vw;
   padding: 2px 1px;
-  width: 200px;
+  max-width: 300px;
+  width:30vw;
   float:left;
+  box-sizing: border-box;
 }
 @media (max-width:640px){
-  .filter-options select{
-    width:40vw;
-    margin: 5px auto;
-  }
   .filter-options h2 {
     width:100vw;
     display:inline-block;
@@ -153,14 +167,15 @@ nav h1 a {
 @media (max-width:470px){
   .filter-options select{
     width:100vw;
-    margin:5px 5px;
+    margin: 10 auto;
+
   }
   .filter-options h2 {
     padding:0;
     margin: 0 5px;
   }
   .filter-options {
-    height:130px;
+    height:150px;
   }
 }
 
@@ -357,4 +372,15 @@ nav h1 a {
   .inside #footer {
     width:100%;
   }
+}
+
+/* ====================== Accessibility ====================== */
+#restaurants-list li a:hover,
+#restaurants-list li a:focus,
+.leaflet-pane > img:focus,
+#neighborhoods-select:focus,
+#cuisines-select:focus,
+#breadcrumb li a:focus
+ {
+  outline: 5px solid #9CFFFFFF;
 }
